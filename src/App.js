@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+import Header from "./components/header/header";
+import CarosalSection from "./components/carousal/carousal";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Fragment } from "react";
+import Categ from "./components/categrioes/categiros";
+import Products from "./components/products/products";
+import ProductDetails from "./components/product-details/product-details";
+import "bootstrap/dist/css/bootstrap.min.css";
+import CartList from "./components/cart/cartlist";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<CarosalSection />} />
+            <Route path="/categories" element={<Categ />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product-details" element={<ProductDetails />} />
+            <Route path="/cart" element={<CartList />} />
+
+            {/* <Route path="/products" element={<CarosalSection />} />
+            <Route path="/products-item" element={<Categ />} />
+            <Route path="/profile" element={<Categ />} />
+            <Route path="/profile" element={<Categ />} /> */}
+            {/* <Route path="*" element={<NoPage />} /> */}
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </Fragment>
   );
 }
 
