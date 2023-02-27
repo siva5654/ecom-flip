@@ -11,6 +11,7 @@ const Login = (props) => {
   const [password, setPassword] = useState();
 
   const ispopoff = () => {
+    console.log(token);
     setLoinpop(false);
     props.ischeckpopoff(false);
   };

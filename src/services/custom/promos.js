@@ -20,7 +20,7 @@ export const promos = [
   {
     name: "15% OFF",
     rule: 1,
-    maxdis: 400,
+    maxdis: 500,
     mincart: 1000,
     disper: 20,
     flat: null,

@@ -11,10 +11,15 @@ import ProductDetails from "./components/product-details/product-details";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartList from "./components/cart/cartlist";
 
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <Fragment>
       <BrowserRouter>
+        <ToastContainer />
         <div>
           <Header />
           <Routes>

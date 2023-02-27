@@ -40,10 +40,9 @@ const Header = () => {
     localStorage.removeItem("user_info");
   };
   useEffect(() => {
-    console.log(user);
     setProfile(dataContext.user);
     token === "" || token === undefined ? setLogin(true) : setLogin(false);
-  }, [dataContext]);
+  }, [dataContext, token, user]);
   return (
     <Fragment>
       <header className="fc_header">

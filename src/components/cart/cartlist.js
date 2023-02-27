@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CategiorsContext } from "../../store/lists";
 import CartPromo from "./cartpromo";
-import PaymentIn from "./paymentinte";
+// import CheckoutForm from "./paymentinte";
 
 const CartList = () => {
   const { cart, setCart } = useContext(CategiorsContext);
@@ -65,6 +65,7 @@ const CartList = () => {
             : item.price,
       };
     });
+    console.log(newupd);
     // console.log(...newupd);
     setCart(newupd);
     // setItems(newupd);
@@ -92,12 +93,7 @@ const CartList = () => {
 
   useEffect(() => {
     setItems(cart);
-    const newupd = cart.map((item, index) => {
-      return {
-        ...item,
-        updateprice: item.price,
-      };
-    });
+
     // setCart(newupd);
 
     // console.log(items);
@@ -106,7 +102,7 @@ const CartList = () => {
       0
     );
     setCost(newCost);
-  }, [cart, items, reMoveItme]);
+  }, [cart, items]);
 
   return (
     <div className="container mt-2  ">
@@ -216,7 +212,7 @@ const CartList = () => {
                   (cost >= 500 ? 0 : 50)}
               </b>
             </p>
-            <PaymentIn />
+            {/* <CheckoutForm /> */}
             {cart.length > 0 && (
               <p className="row   ">
                 {couponCheck ? (

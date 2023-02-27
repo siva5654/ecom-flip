@@ -14,7 +14,7 @@ const Filters = (props) => {
 
   const products = useContext(CategiorsContext);
   const [filters, setFilters] = useState(products.clist);
-  const [value, setValue] = React.useState([0, 5000]);
+  const [value, setValue] = useState([0, 5000]);
   const [items, setItmes] = useState(data);
   //   const [newIt, setNewit] = useState([]);
 
@@ -33,7 +33,7 @@ const Filters = (props) => {
     props.getupdate(data);
 
     // setItmes(props.pros);
-  }, [products, data]);
+  }, [products, data, props]);
 
   return (
     <div>
